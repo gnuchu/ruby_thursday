@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if member_signed_in? %>
+    <%= render "shared/logged_in_header" %>
+  <% else %>
+    <%= render "shared/logged_out_header" %>
+  <% end %>
 
   <% unless notice.blank? %>
     <%= notice %>
